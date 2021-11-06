@@ -1,0 +1,43 @@
+<div class="container-fluid p-5">
+    <div class="container-fluid py-4">
+        <div class="row">
+            <h1>Meetings a las que te anotaste:</h1>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" *ngIf="loading">
+        <div class="spinner-grow" style="width: 4rem; height: 4rem;"  role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <ng-container *ngIf="!meetings.length && !loading">
+        <div class="alert alert-info mx-5" role="alert">
+            Todavia no te anotaste a ninguna reunión, que esperas?
+        </div>
+    </ng-container>
+    <div class="row" *ngFor="let meeting of meetings">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 px-5">
+            <app-meeting-card [meeting]='meeting' (buttonEvent)='removeMeeting($event)' buttonColor='danger' buttonText='Desinscribirse' ></app-meeting-card>
+        </div>
+    </div>
+    <div *ngIf="authService.isAdmin()" class="container-fluid py-4">
+        <div class="row">
+            <h1>Meetings que organizas:</h1>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" *ngIf="loadingAdmin">
+        <div class="spinner-grow" style="width: 4rem; height: 4rem;"  role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <ng-container *ngIf="!adminMeetings.length && !loadingAdmin">
+        <div class="alert alert-info mx-5" role="alert">
+            Todavia no creaste ninguna reunión, que esperas?
+        </div>
+    </ng-container>
+    <div class="row" *ngFor="let meeting of adminMeetings">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 px-5">
+            <app-meeting-card [meeting]='meeting' [isAdmin]='true' ></app-meeting-card>
+        </div>
+    </div>
+</div>
+

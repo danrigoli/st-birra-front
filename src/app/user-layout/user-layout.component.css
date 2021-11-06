@@ -1,0 +1,13 @@
+.logo {
+    filter: brightness(0);
+}
+
+.bg-red {
+    background-color: #ec0000;
+}
+
+.avatar {
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}

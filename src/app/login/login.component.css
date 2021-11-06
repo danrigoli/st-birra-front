@@ -1,0 +1,13 @@
+
+.background {
+    background-color: #ec0000e3;
+    height: 100vh;
+}
+
+.card {
+    border-radius: 16px;
+}
+
+.card-body {
+    flex-direction: column;
+}

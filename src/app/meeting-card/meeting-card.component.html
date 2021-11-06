@@ -1,0 +1,15 @@
+<div class="card shadow p-3 mb-5 bg-body rounded">
+    <img [src]="setIcon()" [title]='getImgTitle()' class="weather-icon">
+    <div class="card-body">
+    <h5 class="card-title">{{ meeting.title }}</h5>
+    <p class="card-text">{{ meeting.description }}</p>
+    <p class="card-text"> 
+        <span>Lugar: {{ meeting.place }} </span>
+        <br>
+        <span>Dia: {{ meeting.dateFormatted }} </span>
+        <br>
+        <span *ngIf="isAdmin">Cantidad de cajas de birra: {{ getBeerBoxes() }}</span>
+    </p>
+    <button *ngIf="!isAdmin" type="button" class="btn" [ngClass]='getButtonColor()' (click)="buttonPress(meeting.id)">{{ buttonText }}</button>
+    </div>
+</div>

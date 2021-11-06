@@ -1,0 +1,20 @@
+<div class="container-fluid p-5">
+    <div class="row mb-5">
+        <div class="col-xs-6 col-sm-8 col-md-9 col-lg-10">
+            <h1>Juntadas de esta semana</h1>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-danger">Crear juntada</button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" *ngIf="loading">
+        <div class="spinner-grow" style="width: 4rem; height: 4rem;"  role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div class="row" *ngFor="let meeting of meetings">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <app-meeting-card (buttonEvent)='joinMeeting($event)' [meeting]='meeting' ></app-meeting-card>
+        </div>
+    </div>
+</div>
