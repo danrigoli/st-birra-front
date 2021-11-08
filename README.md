@@ -1,5 +1,5 @@
 # Birra Front
-El projecto utiliza <a href='https://angular.io/'>Angular v12.2.12</a>.
+El projecto utiliza <a href='https://angular.io/'>Angular v12.2.12</a>. El framework de CSS utilizado es Bootstrap.
 Incluye Karma para el Testing.
 
 ## Instalacion
@@ -28,6 +28,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 Para la Weather API elegi: https://rapidapi.com/community/api/open-weather-map, principalmente porque era la que menos ms tenia. Tuve un par de problemas, por ejemplo, no me dejaba mandarle una fecha para que revise el clima, sino que podia ver 16 dias en el futuro (y eso a veces ni me devolvia los dias). Entonces tome el clima actual de la localidad.
 La Weather API aveces se bloquea, por lo que en utils guarde una response de la API y cargara por defecto si la Weather API no devuelve nada o devuelve error.
 Con el tema de localizacion, queria usar la API de Google para que puedas escribir la direccion exacta pero por peleas con los de Google Cloud no tengo acceso a esas APIs por el momento. Entonces, agarre la API del gobierno para seleccionar la provincia y luego la localidad.
+Si hovereas por el icono del clima te dice la temperatura en C. Si, MUY poco UX, perdon!
+
+Si, la pagina tiene register, raro, pero sino un poco bardo cargar usuarios.
 
 ## Dudas
 Cualquier duda no tengo problema en responderlas :D.
