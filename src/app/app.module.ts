@@ -14,7 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { AuthService } from './core/services/auth.service';
 import { AuthGuard } from './core/guards/auth.guard';
-import { CreateMeetComponent } from './create-meet/create-meet.component';
+import { CreateMeetingComponent } from './create-meeting/create-meeting.component';
 import { GuestGuard } from './core/guards/guest.guard';
 import { AdminGuard } from './core/guards/admin.guard';
 
@@ -27,7 +27,7 @@ import { AdminGuard } from './core/guards/admin.guard';
     MeetingsComponent,
     MeetingCardComponent,
     RegisterComponent,
-    CreateMeetComponent,
+    CreateMeetingComponent,
   ],
   imports: [
     BrowserModule,

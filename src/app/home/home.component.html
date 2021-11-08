@@ -14,8 +14,8 @@
             Todavia no te anotaste a ninguna reunión, que esperas?
         </div>
     </ng-container>
-    <div class="row" *ngFor="let meeting of meetings">
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 px-5">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 px-5" *ngFor="let meeting of meetings">
             <app-meeting-card [meeting]='meeting' (buttonEvent)='removeMeeting($event)' buttonColor='danger' buttonText='Desinscribirse' ></app-meeting-card>
         </div>
     </div>
@@ -34,8 +34,8 @@
             Todavia no creaste ninguna reunión, que esperas?
         </div>
     </ng-container>
-    <div class="row" *ngFor="let meeting of adminMeetings">
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 px-5">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 px-5" *ngFor="let meeting of adminMeetings" >
             <app-meeting-card [meeting]='meeting' [isAdmin]='true' ></app-meeting-card>
         </div>
     </div>

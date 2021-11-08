@@ -1,0 +1,39 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Create Meeting</h1>
+        </div>
+    <form [formGroup]="meetingForm" #form="ngForm" >
+        <div class="mb-3">
+        <label for="title" class="form-label">Nombre de la meeting</label>
+        <input type="text" class="form-control" formControlName="title" id="title">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Descripcion de la meeting</label>
+            <textarea class="form-control" id="description" rows="3" formControlName="description" aria-describedby="descriptionHelp"></textarea>
+          </div>
+        <div class="mb-3">
+        <label for="date" class="form-label">Dia de la meeting</label>
+        <input type="date" class="form-control" formControlName="date" id="date">
+        </div>
+        <div class="mb-3">
+            <label for="provincia" class="form-label">Provincia</label>
+            <input class="form-control" (change)='getMunicipios()' formControlName="provincia" list="datalist" id="provincia" placeholder="Type to search...">
+            <datalist id="datalist">
+                <option *ngFor="let provincia of provincias" [value]='provincia.nombre'>
+            </datalist>
+        </div>
+        <div class="mb-3">
+            <label for="municipio" class="form-label">Municipio</label>
+            <input class="form-control" list="datalistMunicipios" id="municipio" formControlName="place" placeholder="Type to search...">
+            <datalist id="datalistMunicipios">
+                <option *ngFor="let municipio of municipios" [value]='municipio.nombre'>
+            </datalist>
+        </div>
+        <button type="submit" [disabled]='meetingForm.invalid' (click)='submit()' class="btn btn-success">Crear meeting</button>
+    </form>
+</div>
+
+</div>

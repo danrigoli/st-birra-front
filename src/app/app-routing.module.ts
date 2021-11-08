@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 import { GuestGuard } from './core/guards/guest.guard';
+import { CreateMeetingComponent } from './create-meeting/create-meeting.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MeetingsComponent } from './meetings/meetings.component';
@@ -22,6 +23,12 @@ const routes: Routes = [
       {
         path: 'meets',
         component: MeetingsComponent,
+        canActivate: [AuthGuard],
+        canLoad: [AuthGuard]
+      },
+      {
+        path: 'create-meet',
+        component: CreateMeetingComponent,
         canActivate: [AuthGuard],
         canLoad: [AuthGuard]
       }

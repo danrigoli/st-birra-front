@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { Meeting } from '../core/interfaces/meeting.interface';
 import { ApiService } from '../core/services/api.service';
 import { AuthService } from '../core/services/auth.service';
@@ -41,8 +42,19 @@ export class HomeComponent implements OnInit {
   }
 
   removeMeeting(meetingId: any) {
-    this.apiService.put('meetings/remove/' + this.authService.getId()).subscribe((res) => {
+    this.apiService.put('meetings/remove/' + meetingId).subscribe((res) => {
       this.meetings = this.meetings.filter((meeting) => meeting.id !== meetingId);
+      Swal.fire(
+        'Meeting eliminada',
+        'Vos te lo perdes!',
+        'success'
+      )
+    }, (err) => {
+      Swal.fire(
+        'Error',
+        'No se te pudo eliminar de la reunión',
+        'error'
+      )
     })
   }
 
